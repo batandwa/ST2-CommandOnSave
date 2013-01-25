@@ -26,7 +26,7 @@ class CommandOnSavePlus(sublime_plugin.EventListener):
             setting_root = ''
 
 
-            for k,v in enumerate entry
+            for k,v in enumerate(entry)
                 if k.match('folder')
                     setting_folder = v
                 elif k.match('file')
