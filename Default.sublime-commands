@@ -1,0 +1,16 @@
+[
+    {
+        "caption": "Preferences: CommandOnSave+ Settings – Default",
+        "command": "open_file",
+        "args": {
+            "file": "${packages}/CommandOnSavePlus/CommandOnSavePlus.sublime-settings"
+        }
+    },
+    {
+        "caption": "Preferences: CommandOnSave+ Settings – User",
+        "command": "open_file",
+        "args": {
+            "file": "${packages}/User/CommandOnSavePlus.sublime-settings"
+        }
+    }
+]

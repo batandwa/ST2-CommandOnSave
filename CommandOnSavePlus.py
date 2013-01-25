@@ -2,13 +2,15 @@ import sublime
 import sublime_plugin
 import subprocess
 import os
-import re
+
 
 
 class CommandOnSavePlus(sublime_plugin.EventListener):
     def on_post_save(self, view):
-        settings = view.settings()
+        settings = sublime.load_settings('CommandOnSavePlus.sublime-settings')
+        package_dir = os.path.join(sublime.packages_path(), __name__)
         cos_plus = settings.get("command_on_save_plus")
+
         file_path = view.file_name()
         file_folder, file_name = os.path.split(file_path)
         project_folder = view.folders()[0]
