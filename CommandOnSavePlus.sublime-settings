@@ -11,7 +11,7 @@
 
   		"extension" :	".less"			// either an extension or empty to evaluate for all extensions
 
-  		"command"	:	"lessc {{FILE_FOLDER}}/bootstrap.less {{PROJECT_FOLDER}}/css/bootstrap.css",	// {{PROJECT_FOLDER}}, {{FILE_FOLDER}}, {{FILENAME}}, {{FILEPATH}}
+  		"command"	:	"lessc %FILE_FOLDER%/bootstrap.less %PROJECT_FOLDER%/css/bootstrap.css",	// %PROJECT_FOLDER%, %FILE_FOLDER%, %FILE_NAME%, %FILE_PATH%
 
   		]
 
