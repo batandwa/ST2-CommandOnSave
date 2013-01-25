@@ -1,19 +1,14 @@
 {
-  "command_on_save_plus": [
+  "command_on_save_plus": {
 
-  		[
+  			"setting":
+  			{"folder": "",		// either a folder or empty to match all folders
+	  		"file":	"",				// either a file name or empty to evaluate for all files
+	  		"root": 	"",				// either a file root (before extension) or empty to evaluate for all roots.
+	  		"extension":	".less",		// either an extension or empty to evaluate for all extensions
+	  		"command":	"lessc %FILE_FOLDER%/bootstrap.less %PROJECT_FOLDER%/css/bootstrap.css"	// %PROJECT_FOLDER%, %FILE_FOLDER%, %FILE_NAME%, %FILE_PATH%
 
-  		"folder"	:	"~/workspace/",		// either a folder or empty to match all folders
+	  		}
 
-  		"file"		:	"",				// either a file name or empty to evaluate for all files
-
-  		"root"		: 	"",				// either a file root (before extension) or empty to evaluate for all roots.
-
-  		"extension" :	".less",		// either an extension or empty to evaluate for all extensions
-
-  		"command"	:	"lessc %FILE_FOLDER%/bootstrap.less %PROJECT_FOLDER%/css/bootstrap.css",	// %PROJECT_FOLDER%, %FILE_FOLDER%, %FILE_NAME%, %FILE_PATH%
-
-  		]
-
-  ]
+  }
 }
