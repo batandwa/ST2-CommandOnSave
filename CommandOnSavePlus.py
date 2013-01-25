@@ -26,16 +26,16 @@ class CommandOnSavePlus(sublime_plugin.EventListener):
             setting_root = ''
 
 
-            for k,v in enumerate(entry)
-                if k.match('folder')
+            for k,v in enumerate(entry):
+                if k.match('folder'):
                     setting_folder = v
-                elif k.match('file')
+                elif k.match('file'):
                     setting_file = v
-                elif k.match('extension')
+                elif k.match('extension'):
                     setting_extension = v
-                elif k.match('root')
+                elif k.match('root'):
                     setting_root = v
-                elif k.match('command')
+                elif k.match('command'):
                     setting_command = v
                     setting_command = setting_command.replace('%FILE_NAME%',file_name)
                     setting_command = setting_command.replace('%FILE_PATH%',file_path)
@@ -44,7 +44,7 @@ class CommandOnSavePlus(sublime_plugin.EventListener):
 
 
 
-            if ( setting_folder.match(file_folder) or len(setting_folder) == 0 ) and ( setting_root.match(file_root) or len(setting_root) == 0 ) and ( setting_file.match(file_name) or len(setting_file) == 0 )  and ( setting_extension.match(file_extension) or len(setting_extension) == 0 )
+            if ( setting_folder.match(file_folder) or len(setting_folder) == 0 ) and ( setting_root.match(file_root) or len(setting_root) == 0 ) and ( setting_file.match(file_name) or len(setting_file) == 0 )  and ( setting_extension.match(file_extension) or len(setting_extension) == 0 ):
 
                 if len(setting_command) > 0:
                     subprocess.call([setting_command], shell=True)
