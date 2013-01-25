@@ -3,32 +3,17 @@
 
   		[
 
-  		"folder"	:	"~/workspace/",		// either a folder or * to match all folders
+  		"folder"	:	"~/workspace/",		// either a folder or empty to match all folders
 
-  		"file"		:	"*",				// either a file name or * to evaluate for all files
+  		"file"		:	"",				// either a file name or empty to evaluate for all files
 
-  		"folder_regex":	"",					// if not empty, regex to perform on folder to determine whether to run command
+  		"root"		: 	"",				// either a file root (before extension) or empty to evaluate for all roots.
 
-  		"file_regex":	"^.+\.less$",		// if not empty, regex to perform on filename to determine whether to run command
+  		"extension" :	".less"			// either an extension or empty to evaluate for all extensions
 
-  		"command"	:	"less {{FILE_FOLDER}}/bootstrap.less {{PROJECT_FOLDER}}/css/bootstrap.css",	// {{PROJECT_FOLDER}}, {{FILE_FOLDER}}, {{FILENAME}}, {{FILEPATH}}
-
-  		],
-
-  		[
-
-  		"folder"	:	"~/workspace/",		// either a specific folder or * to match all folders
-
-  		"file"		:	"*",				// either a file name or * to evaluate for all files
-
-  		"folder_regex":	"",					// if not empty, regex to perform on folder to determine whether to run command
-
-  		"file_regex":	"^.+\.less$",		// if not empty, regex to perform on filename to determine whether to run command
-
-  		"command"	:	"less {{FILE_FOLDER}}/bootstrap.less {{PROJECT_FOLDER}}/css/bootstrap.css",	// {{PROJECT_FOLDER}}, {{FILE_FOLDER}}, {{FILENAME}}, {{FILEPATH}}
+  		"command"	:	"lessc {{FILE_FOLDER}}/bootstrap.less {{PROJECT_FOLDER}}/css/bootstrap.css",	// {{PROJECT_FOLDER}}, {{FILE_FOLDER}}, {{FILENAME}}, {{FILEPATH}}
 
   		]
-
 
   ]
 }
