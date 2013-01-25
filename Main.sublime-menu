@@ -12,13 +12,13 @@
                 "children":
                 [
                     {
-                        "caption": "Command-on-save",
+                        "caption": "Command-On-Save Plus",
                         "children":
                         [
                             {
                                 "command": "open_file", "args":
                                 {
-                                    "file": "${packages}/CommandOnSave/Base File.sublime-settings"
+                                    "file": "${packages}/CommandOnSavePlus/Base File.sublime-settings"
                                 },
                                 "caption": "Settings – Default"
                             },
