@@ -1,12 +1,34 @@
 {
-  "commands": [
-  	// example 1: project is in folder /Users/klaascuvelier/Projects/example/ 
-  	// rsync files to other server on save
-  	"/Users/klaascuvelier/Projects/example/::rsync -avz /Users/klaascuvelier/Projects/example/ server@server:/home/server/projects/example/ &",
+  "command_on_save_plus": [
 
-  	// example 2: 
-  	// just run a bash script on save (you can put much more commands in there)
-  	"/Users/klaascuvelier/Projects/example2/::/Users/klaascuvelier/Projects/example2/command.sh &"
+  		[
+
+  		"folder"	:	"~/workspace/",		// either a folder or * to match all folders
+
+  		"file"		:	"*",				// either a file name or * to evaluate for all files
+
+  		"folder_regex":	"",					// if not empty, regex to perform on folder to determine whether to run command
+
+  		"file_regex":	"^.+\.less$",		// if not empty, regex to perform on filename to determine whether to run command
+
+  		"command"	:	"less {{FILE_FOLDER}}/bootstrap.less {{PROJECT_FOLDER}}/css/bootstrap.css",	// {{PROJECT_FOLDER}}, {{FILE_FOLDER}}, {{FILENAME}}, {{FILEPATH}}
+
+  		],
+
+  		[
+
+  		"folder"	:	"~/workspace/",		// either a specific folder or * to match all folders
+
+  		"file"		:	"*",				// either a file name or * to evaluate for all files
+
+  		"folder_regex":	"",					// if not empty, regex to perform on folder to determine whether to run command
+
+  		"file_regex":	"^.+\.less$",		// if not empty, regex to perform on filename to determine whether to run command
+
+  		"command"	:	"less {{FILE_FOLDER}}/bootstrap.less {{PROJECT_FOLDER}}/css/bootstrap.css",	// {{PROJECT_FOLDER}}, {{FILE_FOLDER}}, {{FILENAME}}, {{FILEPATH}}
+
+  		]
+
 
   ]
 }
