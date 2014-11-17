@@ -21,7 +21,6 @@ class CommandThread(threading.Thread):
 class CommandOnSavePlus(sublime_plugin.EventListener):
     def on_post_save(self, view):
         settings = sublime.load_settings('CommandOnSavePlus.sublime-settings')
-        package_dir = os.path.join(sublime.packages_path(), __name__)
         cos_plus = settings.get("command_on_save_plus")
 
         file_path = view.file_name()
