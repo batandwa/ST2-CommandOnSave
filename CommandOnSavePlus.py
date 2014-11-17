@@ -2,8 +2,21 @@ import sublime
 import sublime_plugin
 import subprocess
 import os
+import threading
 
+class CommandThread(threading.Thread):
+    def __init__(self, cmd):
+        threading.Thread.__init__(self)
+        self.cmd = cmd
 
+    def run(self):
+        print "Running '%s'" % (self.cmd)
+
+        result = subprocess.call([self.cmd], shell=True)
+        if result == 0:
+            print "Command '%s' ran successfully" % self.cmd
+        else:
+            print "Error executing '%s'" % self.cmd
 
 class CommandOnSavePlus(sublime_plugin.EventListener):
     def on_post_save(self, view):
@@ -51,7 +64,8 @@ class CommandOnSavePlus(sublime_plugin.EventListener):
             if ( setting_folder == (file_folder) or len(setting_folder) == 0 ) and ( setting_root == (file_root) or len(setting_root) == 0 ) and ( setting_file == (file_name) or len(setting_file) == 0 )  and ( setting_extension == (file_extension) or len(setting_extension) == 0 ):
 
                 if len(setting_command) > 0:
-                    subprocess.call([setting_command], shell=True)
+                    print 'Running \'%s\'' % setting_command
+                    CommandThread(setting_command).start()
 
         return
 
