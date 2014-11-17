@@ -8,7 +8,8 @@ Commands can be specific to folder, filename, extension, or root name. Additiona
 INSTALLATION
 ============
 Clone the git repository into your packages folder:
-`$ git clone git://github.com/stuckpixel-ryan/ST2-CommandOnSave.git CommandOnSavePlus`
+
+    git clone git://github.com/stuckpixel-ryan/ST2-CommandOnSave.git CommandOnSavePlus
 
 SETTINGS
 ========
