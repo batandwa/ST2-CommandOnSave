@@ -30,9 +30,7 @@ class CommandOnSavePlus(sublime_plugin.EventListener):
         project_folder = window.folders()[0]
         file_root, file_extension = os.path.splitext(file_name)
 
-
-        for key, entry in cos_plus.iteritems():
-
+        for entry in cos_plus['setting']:
 
             setting_command = ''
             setting_folder = ''
@@ -64,7 +62,6 @@ class CommandOnSavePlus(sublime_plugin.EventListener):
             if ( setting_folder == (file_folder) or len(setting_folder) == 0 ) and ( setting_root == (file_root) or len(setting_root) == 0 ) and ( setting_file == (file_name) or len(setting_file) == 0 )  and ( setting_extension == (file_extension) or len(setting_extension) == 0 ):
 
                 if len(setting_command) > 0:
-                    print 'Running \'%s\'' % setting_command
                     CommandThread(setting_command).start()
 
         return
